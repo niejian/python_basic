@@ -125,11 +125,9 @@ def str2float(s):
         length = len(numb)
         totalLen = len(s) - 1  # 总位数
         return digits[numa + numb]
-    def convert(num):
-        data = 1
-        for i in range(length):
-            data *= 10
-        return num / data
+    def convert(x, y):
+
+        return x * 10 + y
     print(list(map(char2num(s))))
     return reduce(convert, map(char2num(s)))
 print()

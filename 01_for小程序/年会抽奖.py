@@ -1,5 +1,5 @@
 # _*_ utf-8 _*_
-# @time: 2023/12/30 
+# @time: 2023/12/30
 # @author: nj
 # @file: 年会抽奖
 # @project: python_basic2
@@ -56,11 +56,15 @@ def do_lottery(lottery_level, bonus_count, emps):
     return lottery_emps
 
 emps = get_emps(300)
+print(f"参加抽奖人数：{len(emps)}")
 
 print("开始抽三等奖，中奖名单....")
 emps = do_lottery("三", 30, emps)
-print("开始抽二等奖，中奖名单....")
+print(f"参加抽奖人数：{len(emps)}")
+print("开始抽一等奖，中奖名单....")
 emps = do_lottery("二", 10, emps)
-print("开始抽二等奖，中奖名单....")
+print(f"参加抽奖人数：{len(emps)}")
+
+print("开始抽一等奖，中奖名单....")
 emps = do_lottery("一", 5, emps)
 

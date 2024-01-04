@@ -18,7 +18,8 @@ print(rows[0][0])
 # 按条件查询
 # params = 1
 db.get_table_names()
-rows = db.query('id = :params', params=1)
+admin = {"id": 1}
+rows = db.query('id = :id', params=1)
 for row in rows:
     print(row)
 

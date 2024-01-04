@@ -34,8 +34,6 @@ def do_lottery(lottery_level, bonus_count, emps):
     print(f"开始抽{lottery_level}等奖，中奖人数：{bonus_count}.....")
     # 参与抽奖员工列表人数
     emp_count = len(emps)
-    # 复制一个员工数组
-    lottery_emps = emps
 
     # 生成随机数，这个随机数就是中奖人的下标。
     lottery_index_list = random.sample(range(emp_count), bonus_count)
@@ -50,10 +48,9 @@ def do_lottery(lottery_level, bonus_count, emps):
     #     i += 1
     # return lottery_emps
     for i in lottery_index_list:
-        index = i - 1
-        print(f"{index}, 恭喜:{lottery_emps[index]}, 中 {lottery_level}等奖")
-        del lottery_emps[index]
-    return lottery_emps
+        print(f"{i}, 恭喜:{emps[i]}, 中 {lottery_level}等奖")
+        del emps[i]
+    return emps
 
 emps = get_emps(300)
 print(f"参加抽奖人数：{len(emps)}")
@@ -67,4 +64,8 @@ print(f"参加抽奖人数：{len(emps)}")
 
 print("开始抽一等奖，中奖名单....")
 emps = do_lottery("一", 5, emps)
+
+# 0-299
+# for i in range(300):
+#     print(i, end="\t")
 
